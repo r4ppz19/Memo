@@ -24,19 +24,21 @@ public class MainController {
     public void saveButtonAction(ActionEvent event){
         mainModel.setTime(mainModel.getCurrentTime());
         mainModel.setDate(mainModel.getCurrentDate());
-        mainModel.setTxt(mainModel.getTxt());
+        mainModel.setTxt(mainTextArea.getText());
     }
 
     @FXML
-    public void exportButtonAction(ActionEvent event) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
-        writer.write(mainModel.getCurrentDate());
-        writer.newLine();
-        writer.write(mainModel.getCurrentTime());
-        writer.newLine();
-        writer.write(mainModel.getTxt());
-        writer.close();
+    public void exportButtonAction(ActionEvent event) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
+            writer.write(mainModel.getCurrentDate());
+            writer.newLine();
+            writer.write(mainModel.getCurrentTime());
+            writer.newLine();
+            writer.write(mainModel.getTxt());
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("IO EXCEPTION !!! WHOOO HOOO");
+        }
     }
-
-
 }
