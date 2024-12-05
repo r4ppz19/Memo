@@ -1,4 +1,4 @@
-package model;
+package com.r4ppz.model;
 
 import java.util.Objects;
 
@@ -20,7 +20,7 @@ public class Main extends Application{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/MainView.fxml")));
         Scene scene = new Scene(root);
         primaryStage.getIcons().add(mainIcon);
-        primaryStage.setTitle("Thought-Track");
+        primaryStage.setTitle("ThoughtTrack");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

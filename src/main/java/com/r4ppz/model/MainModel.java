@@ -1,4 +1,4 @@
-package model;
+package com.r4ppz.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

@@ -1,4 +1,4 @@
-package controller;
+package com.r4ppz.controller;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import model.MainModel;
+import com.r4ppz.model.MainModel;
 
 public class MainController {
     private MainModel mainModel = new MainModel();
