@@ -29,6 +29,7 @@ public class MainController {
         mainModel.setTime(mainModel.getCurrentTime());
         mainModel.setDate(mainModel.getCurrentDate());
         mainModel.setTxt(mainTextArea.getText());
+        mainTextArea.clear();
     }
 
     
@@ -44,6 +45,9 @@ public class MainController {
             writer.write(mainModel.getCurrentTime());
             writer.newLine();
             writer.write(mainModel.getTxt());
+            writer.newLine();
+            writer.newLine();
+            writer.newLine();
             writer.close();
         } catch (IOException e) {
             System.out.println("IO EXCEPTION !!! WHOOO HOOO");
