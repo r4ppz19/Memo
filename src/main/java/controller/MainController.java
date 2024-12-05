@@ -1,38 +1,32 @@
 package controller;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import model.MainModel;
 
 public class MainController {
+    private MainModel mainModel = new MainModel();
+
     @FXML
-    private Button button;
+    private Button saveButton;
+    @FXML
+    private Button exportButton;
     @FXML
     private TextArea mainTextArea;
 
-    boolean oneTry = true;
-
+    @FXML
+    public void saveButtonAction(ActionEvent event){
+        mainModel.setTime(mainModel.getCurrentTime());
+        mainModel.setDate(mainModel.getCurrentDate());
+        mainModel.setTxt(mainModel.getTxt());
+    }
 
     @FXML
-    public void saveButtonAction(ActionEvent event) throws IOException{
-        saveFile();
+    public void exportButtonAction(ActionEvent event) {
+        
     }
 
-    // Save file method
-    private void saveFile() throws IOException{
-        if (oneTry) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt"));
-            writer.write(mainTextArea.getText());
-            writer.close();
-            mainTextArea.clear();
-            oneTry = false;
-        } else {
-            System.out.println("FUCK! IT DID NOT WORK");
-        }
-    }
+
 }
