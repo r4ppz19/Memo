@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+
 import com.r4ppz.model.MainModel;
 
 public class MainController {
@@ -20,14 +21,16 @@ public class MainController {
     @FXML
     private TextArea mainTextArea;
 
-    @FXML
+    // Handle save button
+    // Get the text in the text area and save it in the model class
     public void saveButtonAction(ActionEvent event){
         mainModel.setTime(mainModel.getCurrentTime());
         mainModel.setDate(mainModel.getCurrentDate());
         mainModel.setTxt(mainTextArea.getText());
     }
 
-    @FXML
+    // Hadle export button
+    // Export datails into a txt file
     public void exportButtonAction(ActionEvent event) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
