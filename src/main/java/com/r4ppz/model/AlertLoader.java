@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 public class AlertLoader {
 
+    // Display AlertView method
     public void showAlert() throws Exception{
         Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/TTIcon.png")));
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/AlertView.fxml")));

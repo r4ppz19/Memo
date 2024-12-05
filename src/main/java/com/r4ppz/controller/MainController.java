@@ -21,16 +21,21 @@ public class MainController {
     @FXML
     private TextArea mainTextArea;
 
-    // Handle save button
-    // Get the text in the text area and save it in the model class
+    /*
+     * Handle save buttom
+     * Get the text in the text area and save it in the model class
+     */
     public void saveButtonAction(ActionEvent event){
         mainModel.setTime(mainModel.getCurrentTime());
         mainModel.setDate(mainModel.getCurrentDate());
         mainModel.setTxt(mainTextArea.getText());
     }
 
-    // Hadle export button
-    // Export datails into a txt file
+    
+    /*
+     * Handle export button
+     * Export details into a txt file
+     */
     public void exportButtonAction(ActionEvent event) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
