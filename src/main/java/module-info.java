@@ -3,9 +3,9 @@ module com.r4ppz {
     requires javafx.fxml;
     requires transitive javafx.graphics;
 
-    opens controller to javafx.fxml;
-    opens model to javafx.fxml;
+    opens com.r4ppz.controller to javafx.fxml;
+    opens com.r4ppz.model to javafx.fxml;
 
-    exports controller;
-    exports model;
+    exports com.r4ppz.controller;
+    exports com.r4ppz.model;
 }

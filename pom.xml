@@ -43,7 +43,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>model.Main</mainClass>
+                            <mainClass>com.r4ppz.model.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
