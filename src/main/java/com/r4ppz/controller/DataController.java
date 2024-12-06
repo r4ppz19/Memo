@@ -12,8 +12,8 @@ import javafx.scene.control.TextArea;
 import com.r4ppz.model.DataModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
-import com.r4ppz.views.AlertWindow;
-import com.r4ppz.views.TestWindow;
+import com.r4ppz.view.AlertWindow;
+import com.r4ppz.view.TestWindow;
 
 public class DataController {
     private DataModel mainModel = new DataModel();

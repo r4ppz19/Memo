@@ -1,4 +1,4 @@
-package com.r4ppz.views;
+package com.r4ppz.view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,7 +18,7 @@ public class TestWindow {
 
     public void showTestWindow() {
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("My Awesome Window");
+        primaryStage.setTitle("I don't know");
 
         Pane pane = new Pane();
         pane.setPrefSize(984, 496);

@@ -1,4 +1,4 @@
-package com.r4ppz.views;
+package com.r4ppz.view;
 
 import java.util.Objects;
 
@@ -14,7 +14,7 @@ public class AlertWindow {
     // Display AlertView method
     public void showAlert() throws Exception{
         Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/TTIcon.png")));
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/AlertView.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AlertView.fxml")));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
