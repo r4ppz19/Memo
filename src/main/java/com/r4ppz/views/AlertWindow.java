@@ -1,4 +1,4 @@
-package com.r4ppz.windows;
+package com.r4ppz.views;
 
 import java.util.Objects;
 

@@ -12,13 +12,16 @@ import javafx.scene.control.TextArea;
 import com.r4ppz.model.MainModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
-import com.r4ppz.windows.AlertWindow;
+import com.r4ppz.views.AlertWindow;
+import com.r4ppz.views.TestWindow;
 
 public class MainController {
     private MainModel mainModel = new MainModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private ImportExport importExport = new ImportExport();
     private AlertWindow alertWindow = new AlertWindow();
+    
+    private TestWindow testWindow = new TestWindow();
 
     @FXML
     private Button saveButton;
@@ -37,6 +40,8 @@ public class MainController {
         mainModel.setTxt(mainTextArea.getText());
         mainTextArea.clear();
         alertWindow.showAlert();
+        testWindow.showTestWindow();
+
     }
 
     
