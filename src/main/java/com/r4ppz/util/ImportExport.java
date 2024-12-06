@@ -6,10 +6,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.r4ppz.model.MainModel;
+import com.r4ppz.model.DataModel;
 
 public class ImportExport {
-    private MainModel mainModel = new MainModel();
+    private DataModel mainModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
 
 

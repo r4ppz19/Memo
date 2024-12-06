@@ -1,15 +1,15 @@
 package com.r4ppz.model;
 
-public class MainModel {
+public class DataModel {
     private String txt;
     private String time;
     private String date;
 
     // Default constructor
-    public MainModel() {}
+    public DataModel() {}
 
     // Second constructor
-    public MainModel(String txt, String date, String time) {
+    public DataModel(String txt, String date, String time) {
         this.txt = txt;
         this.date = date;
         this.time = time;

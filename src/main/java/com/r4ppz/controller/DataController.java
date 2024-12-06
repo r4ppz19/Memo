@@ -9,14 +9,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-import com.r4ppz.model.MainModel;
+import com.r4ppz.model.DataModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
 import com.r4ppz.views.AlertWindow;
 import com.r4ppz.views.TestWindow;
 
-public class MainController {
-    private MainModel mainModel = new MainModel();
+public class DataController {
+    private DataModel mainModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private ImportExport importExport = new ImportExport();
     private AlertWindow alertWindow = new AlertWindow();
