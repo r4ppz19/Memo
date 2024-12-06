@@ -1,4 +1,4 @@
-package com.r4ppz.model;
+package com.r4ppz;
 
 import java.util.Objects;
 
