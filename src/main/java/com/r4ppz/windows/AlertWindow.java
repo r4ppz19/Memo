@@ -1,4 +1,4 @@
-package com.r4ppz.window;
+package com.r4ppz.windows;
 
 import java.util.Objects;
 
@@ -6,9 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AlertLoader {
+public class AlertWindow {
 
     // Display AlertView method
     public void showAlert() throws Exception{
@@ -19,7 +20,8 @@ public class AlertLoader {
         stage.setScene(scene);
         stage.getIcons().add(mainIcon);
         stage.setResizable(false);
-        stage.show();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
     
 }

@@ -12,11 +12,13 @@ import javafx.scene.control.TextArea;
 import com.r4ppz.model.MainModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
+import com.r4ppz.windows.AlertWindow;
 
 public class MainController {
     private MainModel mainModel = new MainModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private ImportExport importExport = new ImportExport();
+    private AlertWindow alertWindow = new AlertWindow();
 
     @FXML
     private Button saveButton;
@@ -29,11 +31,12 @@ public class MainController {
      * Handle save buttom
      * Get the text in the text area and save it in the model class
      */
-    public void saveButtonAction(ActionEvent event){
+    public void saveButtonAction(ActionEvent event) throws Exception{
         mainModel.setTime(getTimeDate.getCurrentTime());
         mainModel.setDate(getTimeDate.getCurrentDate());
         mainModel.setTxt(mainTextArea.getText());
         mainTextArea.clear();
+        alertWindow.showAlert();
     }
 
     
@@ -53,7 +56,7 @@ public class MainController {
             writer.newLine();
             writer.close();
             importExport.importData();
-        } catch (IOException IOe) {
+        } catch (IOException e) {
             System.out.println("IO EXCEPTION !!! WHOOO HOOO");
         }
     }

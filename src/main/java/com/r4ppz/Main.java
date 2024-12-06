@@ -21,6 +21,7 @@ public class Main extends Application{
         Scene scene = new Scene(root);
         primaryStage.getIcons().add(mainIcon);
         primaryStage.setTitle("ThoughtTrack");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

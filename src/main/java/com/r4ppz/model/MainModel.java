@@ -44,10 +44,4 @@ public class MainModel {
     public String getDate() {
         return date;
     }
-
-
-
-
-
-
 }
