@@ -1,6 +1,6 @@
 /* Set the background color for the entire application */
 .root {
-    -fx-background-color: #f0f0f0;
+    -fx-background-color: #ffffff;
     -fx-font-family: Lexend;
 }
 
@@ -8,21 +8,27 @@
 .text-area {
     -fx-background-color: #ffffff;
     -fx-text-fill: #000000;
-    -fx-highlight-fill: #d0d0d0;
-    -fx-highlight-text-fill: #000000;
-    -fx-prompt-text-fill: #a0a0a0;
-    -fx-border-color: #d0d0d0;
-    -fx-background-radius: 5; /* Simplified background radius */
-    -fx-border-radius: 5; /* Simplified border radius */
+    -fx-border-color: #000000;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+}
+
+.text-area:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: #000000;
+    -fx-background-color: #ffffff;
 }
 
 /* Style for Buttons */
 .button {
     -fx-background-color: #e0e0e0;
     -fx-text-fill: #000000;
-    -fx-border-color: #c0c0c0;
+    -fx-border-color: #020202;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
+    -fx-padding: 10 20;
 }
 
 .button:hover {
@@ -33,6 +39,13 @@
 .button:pressed {
     -fx-background-color: #c0c0c0;
     -fx-text-fill: #000000;
+}
+
+.button:focused {
+    -fx-focus-color: #ffffff;
+    -fx-faint-focus-color: #ffffff;
+    -fx-border-color: #ffffff;
+    -fx-background-color: #ffe6e6;
 }
 
 /* Style for Labels */

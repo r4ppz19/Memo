@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application{
@@ -16,6 +17,8 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Font.loadFont(getClass().getResourceAsStream("/font/Lexend.ttf"), 14);
+
         Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/TTIcon.png")));
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainView.fxml")));
         Scene scene = new Scene(root);
