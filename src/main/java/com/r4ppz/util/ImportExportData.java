@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import com.r4ppz.model.DataModel;
 
-public class ImportExport {
+public class ImportExportData {
     public DataModel dataModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
 
