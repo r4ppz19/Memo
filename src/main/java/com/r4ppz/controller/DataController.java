@@ -1,9 +1,5 @@
 package com.r4ppz.controller;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +12,7 @@ import com.r4ppz.view.AlertWindow;
 import com.r4ppz.view.TestWindow;
 
 public class DataController {
-    private DataModel mainModel = new DataModel();
+    private DataModel dataModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private ImportExport importExport = new ImportExport();
     private AlertWindow alertWindow = new AlertWindow();
@@ -35,13 +31,16 @@ public class DataController {
      * Get the text in the text area and save it in the model class
      */
     public void saveButtonAction(ActionEvent event) throws Exception{
-        mainModel.setTime(getTimeDate.getCurrentTime());
-        mainModel.setDate(getTimeDate.getCurrentDate());
-        mainModel.setTxt(mainTextArea.getText());
-        mainTextArea.clear();
-        alertWindow.showAlert();
-        testWindow.showTestWindow();
-
+        if (!mainTextArea.getText().isEmpty()) {
+            dataModel.setTime(getTimeDate.getCurrentTime());
+            dataModel.setDate(getTimeDate.getCurrentDate());
+            dataModel.setTxt(mainTextArea.getText());
+            mainTextArea.clear();
+            alertWindow.showAlert();
+            testWindow.showTestWindow();
+        } else {
+            System.out.println("mainTextArea is empty");
+        }
     }
 
     
@@ -50,19 +49,11 @@ public class DataController {
      * Export details into a txt file
      */
     public void exportButtonAction(ActionEvent event) {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
-            writer.write(getTimeDate.getCurrentDate());
-            writer.newLine();
-            writer.write(getTimeDate.getCurrentTime());
-            writer.newLine();
-            writer.write(mainModel.getTxt());
-            writer.newLine();
-            writer.newLine();
-            writer.close();
-            importExport.importData();
-        } catch (IOException e) {
-            System.out.println("IO EXCEPTION !!! WHOOO HOOO");
+        if (dataModel.getTxt() == null) {
+            System.out.println("DO DID NOT FUCKING WRITE ANYTHING");
+        } else {
+            importExport.exportData();
         }
+        
     }
 }
