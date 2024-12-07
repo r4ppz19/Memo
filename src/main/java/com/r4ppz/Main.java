@@ -20,7 +20,7 @@ public class Main extends Application{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainView.fxml")));
         Scene scene = new Scene(root);
         primaryStage.getIcons().add(mainIcon);
-        primaryStage.setTitle("ThoughtTrack");
+        primaryStage.setTitle("Memo");
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
