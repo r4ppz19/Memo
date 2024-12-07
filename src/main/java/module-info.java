@@ -9,5 +9,8 @@ module com.r4ppz {
 
     exports com.r4ppz;
     exports com.r4ppz.controller;
+    exports com.r4ppz.model;
     exports com.r4ppz.view;
+    exports com.r4ppz.util;
+
 }
