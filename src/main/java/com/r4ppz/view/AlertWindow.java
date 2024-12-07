@@ -13,7 +13,7 @@ public class AlertWindow {
 
     // Display AlertView method
     public void showAlert() throws Exception{
-        Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/TTIcon.png")));
+        Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/memo-icon.png")));
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AlertView.fxml")));
         Stage stage = new Stage();
         Scene scene = new Scene(root);

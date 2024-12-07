@@ -16,7 +16,7 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/TTIcon.png")));
+        Image mainIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/image/memo-icon.png")));
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/MainView.fxml")));
         Scene scene = new Scene(root);
         primaryStage.getIcons().add(mainIcon);
