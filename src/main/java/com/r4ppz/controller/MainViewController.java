@@ -10,7 +10,7 @@ import com.r4ppz.util.ImportExport;
 import com.r4ppz.view.AlertWindow;
 //import com.r4ppz.view.TestWindow;
 
-public class DataController {
+public class MainViewController {
     private ImportExport importExport = new ImportExport();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private AlertWindow alertWindow = new AlertWindow();
