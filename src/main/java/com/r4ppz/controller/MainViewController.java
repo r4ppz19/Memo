@@ -21,8 +21,6 @@ public class MainViewController {
     @FXML
     private Button saveButton;
     @FXML
-    private Button exportButton;
-    @FXML
     private TextArea mainTextArea;
 
     /*
@@ -36,6 +34,9 @@ public class MainViewController {
             importExportData.dataModel.setTxt(mainTextArea.getText());
             mainTextArea.clear();
             alertWindow.showAlert();
+            
+            importExportData.exportData();
+
             //testWindow.showTestWindow();
         } else {
             System.out.println("mainTextArea is empty");
