@@ -5,14 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-import com.r4ppz.model.DataModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
 import com.r4ppz.view.AlertWindow;
 //import com.r4ppz.view.TestWindow;
 
 public class DataController {
-    //private DataModel dataModel = new DataModel();
     private ImportExport importExport = new ImportExport();
     private GetTimeDate getTimeDate = new GetTimeDate();
     private AlertWindow alertWindow = new AlertWindow();
@@ -50,7 +48,6 @@ public class DataController {
      */
     public void exportButtonAction(ActionEvent event) {
         if (importExport.dataModel.getTxt() != null && !importExport.dataModel.getTxt().isEmpty()) {
-            System.out.println("txt variable has been initialize and not empty");
             importExport.exportData();
         } else {
             System.out.println("txt variable is either null or empty");

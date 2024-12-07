@@ -39,12 +39,7 @@ public class ImportExport {
             writer.newLine();
             writer.write(getTimeDate.getCurrentTime());
             writer.newLine();
-            if (dataModel.getTxt() != null) {
-                writer.write(dataModel.getTxt());
-            } else {
-                System.out.println("TXT IS NULL BOBO");
-            }
-            
+            writer.write(dataModel.getTxt());
             writer.newLine();
             writer.newLine();
         } catch (IOException IOe) {
