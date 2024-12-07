@@ -9,9 +9,8 @@ import java.io.IOException;
 import com.r4ppz.model.DataModel;
 
 public class ImportExport {
-    private DataModel dataModel = new DataModel();
+    public DataModel dataModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
-
 
     // Import data.txt in to the program
     public void importData() {
@@ -35,20 +34,24 @@ public class ImportExport {
 
     // Export data to data.txt
     public void exportData() {
-        if (dataModel.getTxt() != null) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true))){
-                writer.write(getTimeDate.getCurrentDate());
-                writer.newLine();
-                writer.write(getTimeDate.getCurrentTime());
-                writer.newLine();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true))) {
+            writer.write(getTimeDate.getCurrentDate());
+            writer.newLine();
+            writer.write(getTimeDate.getCurrentTime());
+            writer.newLine();
+            if (dataModel.getTxt() != null) {
                 writer.write(dataModel.getTxt());
-                writer.newLine();
-                writer.newLine();
-            } catch (IOException IOe) {
-                System.out.println("IO EXCEPTION !!! WHOOO HOOO");
+            } else {
+                System.out.println("TXT IS NULL BOBO");
             }
-        } else {
-            System.out.println("EXPORT METHOD DID NOT FUCKING WORK!");
+            
+            writer.newLine();
+            writer.newLine();
+        } catch (IOException IOe) {
+            System.out.println("IO EXCEPTION WHOOO HOOO !!!");
+        } catch (NullPointerException NPe) {
+            System.out.println("NULL POINTER EXCEPTION WHOOO HOOO !!!");
         }
+
     }
 }

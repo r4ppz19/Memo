@@ -9,15 +9,15 @@ import com.r4ppz.model.DataModel;
 import com.r4ppz.util.GetTimeDate;
 import com.r4ppz.util.ImportExport;
 import com.r4ppz.view.AlertWindow;
-import com.r4ppz.view.TestWindow;
+//import com.r4ppz.view.TestWindow;
 
 public class DataController {
-    private DataModel dataModel = new DataModel();
-    private GetTimeDate getTimeDate = new GetTimeDate();
+    //private DataModel dataModel = new DataModel();
     private ImportExport importExport = new ImportExport();
+    private GetTimeDate getTimeDate = new GetTimeDate();
     private AlertWindow alertWindow = new AlertWindow();
     
-    private TestWindow testWindow = new TestWindow();
+    //private TestWindow testWindow = new TestWindow();
 
     @FXML
     private Button saveButton;
@@ -32,12 +32,12 @@ public class DataController {
      */
     public void saveButtonAction(ActionEvent event) throws Exception{
         if (!mainTextArea.getText().isEmpty()) {
-            dataModel.setTime(getTimeDate.getCurrentTime());
-            dataModel.setDate(getTimeDate.getCurrentDate());
-            dataModel.setTxt(mainTextArea.getText());
+            importExport.dataModel.setTime(getTimeDate.getCurrentTime());
+            importExport.dataModel.setDate(getTimeDate.getCurrentDate());
+            importExport.dataModel.setTxt(mainTextArea.getText());
             mainTextArea.clear();
             alertWindow.showAlert();
-            testWindow.showTestWindow();
+            //testWindow.showTestWindow();
         } else {
             System.out.println("mainTextArea is empty");
         }
@@ -49,10 +49,11 @@ public class DataController {
      * Export details into a txt file
      */
     public void exportButtonAction(ActionEvent event) {
-        if (dataModel.getTxt() == null) {
-            System.out.println("DO DID NOT FUCKING WRITE ANYTHING");
-        } else {
+        if (importExport.dataModel.getTxt() != null && !importExport.dataModel.getTxt().isEmpty()) {
+            System.out.println("txt variable has been initialize and not empty");
             importExport.exportData();
+        } else {
+            System.out.println("txt variable is either null or empty");
         }
         
     }
