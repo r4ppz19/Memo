@@ -30,20 +30,18 @@
 }
 
 .button:hover {
-    -fx-background-color: #d0d0d0;
+    -fx-background-color: #e2e2e2;
     -fx-text-fill: #000000;
 }
 
 .button:pressed {
-    -fx-background-color: #c0c0c0;
-    -fx-text-fill: #000000;
+    -fx-background-color: #d0d0d0;
+    -fx-text-fill: #0033ff;
 }
 
 .button:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
-    -fx-border-color: #000000;
-    -fx-background-color: #ffffff;
 }
 
 /* Style for Labels */
