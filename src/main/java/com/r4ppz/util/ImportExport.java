@@ -9,7 +9,7 @@ import java.io.IOException;
 import com.r4ppz.model.DataModel;
 
 public class ImportExport {
-    private DataModel mainModel = new DataModel();
+    private DataModel dataModel = new DataModel();
     private GetTimeDate getTimeDate = new GetTimeDate();
 
 
@@ -18,16 +18,16 @@ public class ImportExport {
         try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
             String line;
             if ((line = reader.readLine()) != null) {
-                mainModel.setDate(line);
+                dataModel.setDate(line);
             }
             if ((line = reader.readLine()) != null) {
-                mainModel.setTime(line);
+                dataModel.setTime(line);
             }
             StringBuilder textBuilder = new StringBuilder();
             while ((line = reader.readLine()) != null) {
                 textBuilder.append(line).append("\n");
             }
-            mainModel.setTxt(textBuilder.toString().trim());
+            dataModel.setTxt(textBuilder.toString().trim());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -35,18 +35,20 @@ public class ImportExport {
 
     // Export data to data.txt
     public void exportData() {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true));
-            writer.write(getTimeDate.getCurrentDate());
-            writer.newLine();
-            writer.write(getTimeDate.getCurrentTime());
-            writer.newLine();
-            writer.write(mainModel.getTxt());
-            writer.newLine();
-            writer.newLine();
-            writer.close();
-        } catch (IOException IOe) {
-            System.out.println("IO EXCEPTION !!! WHOOO HOOO");
+        if (dataModel.getTxt() != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt", true))){
+                writer.write(getTimeDate.getCurrentDate());
+                writer.newLine();
+                writer.write(getTimeDate.getCurrentTime());
+                writer.newLine();
+                writer.write(dataModel.getTxt());
+                writer.newLine();
+                writer.newLine();
+            } catch (IOException IOe) {
+                System.out.println("IO EXCEPTION !!! WHOOO HOOO");
+            }
+        } else {
+            System.out.println("EXPORT METHOD DID NOT FUCKING WORK!");
         }
     }
 }

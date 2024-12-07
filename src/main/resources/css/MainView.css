@@ -1,7 +1,7 @@
 /* Set the background color for the entire application */
 .root {
     -fx-background-color: #ffffff;
-    -fx-font-family: Lexend;
+    -fx-font-family: Lexend, JetBrains Mono;
 }
 
 /* Style for TextArea */
@@ -11,19 +11,17 @@
     -fx-border-color: #000000;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
-    -fx-padding: 10;
+    -fx-padding: 2;
 }
 
 .text-area:focused {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
-    -fx-border-color: #000000;
-    -fx-background-color: #ffffff;
 }
 
 /* Style for Buttons */
 .button {
-    -fx-background-color: #e0e0e0;
+    -fx-background-color: #ffffff;
     -fx-text-fill: #000000;
     -fx-border-color: #020202;
     -fx-border-radius: 5;
@@ -42,10 +40,10 @@
 }
 
 .button:focused {
-    -fx-focus-color: #ffffff;
-    -fx-faint-focus-color: #ffffff;
-    -fx-border-color: #ffffff;
-    -fx-background-color: #ffe6e6;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: #000000;
+    -fx-background-color: #ffffff;
 }
 
 /* Style for Labels */
